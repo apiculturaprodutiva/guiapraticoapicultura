@@ -1,0 +1,1305 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guia Prático de Como Iniciar na Apicultura | Puro Mel GO</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Playfair Display, Plus Jakarta Sans e Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800;900&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Plus Jakarta Sans', 'sans-serif'],
+            serif: ['Playfair Display', 'serif'],
+          },
+          colors: {
+            honey: {
+              50: '#FFFBEB',
+              100: '#FEF3C7',
+              200: '#FDE68A',
+              400: '#FBBF24',
+              500: '#F59E0B',
+              600: '#D97706',
+              700: '#B45309',
+            },
+            forest: {
+              800: '#166534',
+              900: '#132A1C',
+              950: '#0B1910',
+            },
+            charcoal: '#1A1A1A',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Padrão de favos de mel sutil em SVG inline */
+    .bg-honeycomb {
+      background-color: #1A1A1A;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='100' viewBox='0 0 56 100'%3E%3Cpath d='M28 66L0 50L0 16L28 0L56 16L56 50L28 66L28 100' fill='none' stroke='%23F59E0B' stroke-opacity='0.09' stroke-width='1.5'/%3E%3Cpath d='M28 0L28 34L0 50L0 84L28 100L56 84L56 50L28 34' fill='none' stroke='%23F59E0B' stroke-opacity='0.09' stroke-width='1.5'/%3E%3C/svg%3E");
+    }
+
+    .bg-honeycomb-light {
+      background-color: #FFFBEB;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='100' viewBox='0 0 56 100'%3E%3Cpath d='M28 66L0 50L0 16L28 0L56 16L56 50L28 66L28 100' fill='none' stroke='%23D97706' stroke-opacity='0.06' stroke-width='1.5'/%3E%3C/svg%3E");
+    }
+
+    /* Mockup 3D do E-book */
+    .book-container {
+      perspective: 1200px;
+    }
+    .book-3d {
+      transform: rotateY(-12deg) rotateX(3deg);
+      transform-style: preserve-3d;
+      transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+      box-shadow: 18px 22px 40px rgba(0, 0, 0, 0.45), -3px 0 0 #B45309, -6px 0 0 #78350F, -9px 0 0 #451A03;
+    }
+    .book-container:hover .book-3d {
+      transform: rotateY(-4deg) rotateX(1deg) scale(1.02);
+    }
+
+    /* Animação de pulso suave nos botões principais */
+    @keyframes pulse-glow {
+      0%, 100% {
+        box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.55);
+      }
+      50% {
+        box-shadow: 0 0 0 14px rgba(245, 158, 11, 0);
+      }
+    }
+    .btn-pulse {
+      animation: pulse-glow 2.5s infinite;
+    }
+
+    /* Barra de progresso da prévia simulada da VSL */
+    @keyframes vslProgress {
+      0% { width: 0%; }
+      100% { width: 100%; }
+    }
+    .animate-vsl-bar {
+      animation: vslProgress 18s linear forwards;
+    }
+
+    /* Animações de revelação ao rolar */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: all 0.7s ease-out;
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body class="font-sans text-charcoal bg-white antialiased selection:bg-honey-500 selection:text-white overflow-x-hidden">
+
+  <!-- 1. BARRA SUPERIOR DE DESTAQUE -->
+  <div class="bg-forest-900 text-honey-100 text-xs sm:text-sm font-bold tracking-wider uppercase py-2.5 px-4 text-center border-b border-honey-500/30 sticky top-0 z-40 shadow-md">
+    <div class="max-w-6xl mx-auto flex items-center justify-center gap-2">
+      <span class="inline-block w-2 h-2 rounded-full bg-honey-400 animate-ping"></span>
+      <span>MÉTODO PRÁTICO DO ZERO AO SUPER ENXAME • ACESSO IMEDIATO</span>
+    </div>
+  </div>
+
+  <!-- 2. SEÇÃO HERO CENTRALIZADA COM VSL (VIDEO SALES LETTER) -->
+  <header class="bg-honeycomb text-white relative overflow-hidden pt-8 pb-16 sm:pt-10 sm:pb-24 border-b-4 border-honey-500">
+    <!-- Brilho ambiente dourado -->
+    <div class="absolute top-12 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-honey-500/15 blur-[130px] rounded-full pointer-events-none"></div>
+
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+      
+      <!-- Logo / Selo Hexagonal Puro Mel GO Centralizado -->
+      <div class="flex justify-center mb-6">
+        <div class="inline-flex items-center gap-3 bg-white/5 backdrop-blur-sm border border-honey-500/40 rounded-2xl px-4 py-2">
+          <svg class="w-10 h-10 shrink-0" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="50,3 93,27 93,73 50,97 7,73 7,27" fill="#1A1A1A" stroke="#F59E0B" stroke-width="5"/>
+            <polygon points="50,12 85,32 85,68 50,88 15,68 15,32" fill="none" stroke="#FDE68A" stroke-width="2"/>
+            <path d="M38 56L50 49L62 56V70L50 77L38 70V56Z" fill="#F59E0B"/>
+            <path d="M50 49V63M50 63L62 56M50 63L38 56" stroke="#78350F" stroke-width="2"/>
+            <ellipse cx="50" cy="36" rx="9" ry="6" fill="#FBBF24"/>
+            <path d="M46 31V41M50 30V42M54 31V41" stroke="#1A1A1A" stroke-width="2"/>
+            <ellipse cx="47" cy="27" rx="5" ry="3" transform="rotate(-25 47 27)" fill="#FEF3C7" fill-opacity="0.85"/>
+            <ellipse cx="53" cy="27" rx="5" ry="3" transform="rotate(25 53 27)" fill="#FEF3C7" fill-opacity="0.85"/>
+          </svg>
+          <div class="text-left">
+            <span class="block font-display font-extrabold text-base sm:text-lg tracking-tight text-honey-400 leading-none">Puro Mel <span class="text-white">GO</span></span>
+            <span class="text-[10px] uppercase tracking-widest text-stone-300 font-medium">Apicultura Produtiva</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chamada Superior + Headline + Subheadline -->
+      <div class="max-w-4xl mx-auto space-y-4 sm:space-y-5">
+        <div class="inline-flex items-center gap-2 bg-forest-900/95 border border-honey-500/40 text-honey-300 text-xs sm:text-sm font-bold uppercase tracking-widest px-4 py-1.5 rounded-full shadow">
+          <span>MÉTODO PRÁTICO DO ZERO AO SUPER ENXAME</span>
+        </div>
+
+        <h1 class="font-serif font-extrabold text-3xl sm:text-4xl lg:text-[46px] leading-[1.15] tracking-tight text-white">
+          Transforme a Criação de Abelhas em uma <span class="text-honey-400">Fonte Real de Renda</span> e Produtividade — Mesmo Começando do Zero
+        </h1>
+
+        <p class="text-stone-300 text-base sm:text-lg lg:text-xl leading-relaxed max-w-3xl mx-auto">
+          Assista ao vídeo abaixo e descubra o passo a passo ilustrado para instalar seu apiário, capturar enxames com caixas-iscas e dominar os manejos de <strong class="text-white">entressafra, pré-safra e safra</strong> para colheitas recordes de mel.
+        </p>
+      </div>
+
+      <!-- PLAYER DE VSL (VIDEO SALES LETTER) 16:9 -->
+      <div class="max-w-4xl mx-auto mt-8 sm:mt-10">
+        <!-- Faixa Superior do Player -->
+        <div class="bg-gradient-to-r from-honey-600 via-honey-500 to-honey-600 text-charcoal font-display font-extrabold text-xs sm:text-sm uppercase tracking-wider py-2.5 px-4 rounded-t-2xl flex items-center justify-center gap-2 shadow-lg">
+          <svg class="w-4 h-4 sm:w-5 sm:h-5 animate-bounce shrink-0" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.707.707L4.586 13H2a1 1 0 01-1-1V8a1 1 0 011-1h2.586l3.707-3.707a1 1 0 011.09-.217zM14.657 2.929a1 1 0 011.414 0A9.972 9.972 0 0119 10a9.972 9.972 0 01-2.929 7.071 1 1 0 01-1.414-1.414A7.971 7.971 0 0017 10c0-2.21-.894-4.208-2.343-5.657a1 1 0 010-1.414zm-2.829 2.828a1 1 0 011.415 0A5.983 5.983 0 0115 10a5.984 5.984 0 01-1.757 4.243 1 1 0 01-1.415-1.415A3.984 3.984 0 0013 10a3.983 3.983 0 00-1.172-2.828 1 1 0 010-1.415z" clip-rule="evenodd"/>
+          </svg>
+          <span>ASSISTA AO VÍDEO ABAIXO ANTES DE CONTINUAR</span>
+        </div>
+
+        <!-- Moldura 16:9 da VSL -->
+        <div class="relative w-full aspect-video bg-stone-950 rounded-b-2xl border-x-4 border-b-4 border-honey-500 shadow-[0_25px_60px_rgba(0,0,0,0.75)] overflow-hidden group" id="vslWrapper">
+          
+          <!-- Botão Discreto de Configuração no Canto do Player (Modo Produtor) -->
+          <button type="button" onclick="toggleProducerPanel()" title="Configurar Vídeo VSL (Modo Produtor)" class="producer-ui absolute top-3 right-3 z-30 bg-charcoal/85 hover:bg-honey-500 text-stone-300 hover:text-charcoal border border-honey-500/40 p-2 rounded-xl backdrop-blur-sm transition-all shadow-lg cursor-pointer flex items-center gap-1.5 text-xs font-bold">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            <span class="hidden sm:inline">Inserir Vídeo</span>
+          </button>
+
+          <!-- Container dinâmico onde o Vídeo Real ou o Placeholder será renderizado -->
+          <div id="vslPlayerContainer" class="w-full h-full relative">
+            <!-- Estado Padrão: Capa Temática Interativa + Prévia Animada -->
+            <div id="vslPlaceholder" onclick="startVslDemoPreview()" class="w-full h-full bg-gradient-to-br from-forest-950 via-stone-900 to-charcoal flex flex-col items-center justify-center p-6 cursor-pointer relative overflow-hidden">
+              <!-- Textura de favos no fundo do player -->
+              <div class="absolute inset-0 bg-honeycomb opacity-40 pointer-events-none"></div>
+              <div class="absolute inset-0 bg-radial from-honey-500/20 via-transparent to-black/70 pointer-events-none"></div>
+
+              <!-- Ilustração de Colmeia & Mel no fundo -->
+              <div class="relative z-10 flex flex-col items-center text-center max-w-lg space-y-4">
+                <!-- Botão Play Pulsante Dourado -->
+                <div class="btn-pulse w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-gradient-to-br from-honey-400 to-honey-600 text-charcoal flex items-center justify-center shadow-2xl transform group-hover:scale-110 transition-transform duration-300 border-4 border-honey-200">
+                  <svg class="w-10 h-10 sm:w-12 sm:h-12 ml-1.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                </div>
+
+                <div class="space-y-1.5">
+                  <span class="inline-block bg-charcoal/80 border border-honey-500/40 text-honey-300 text-[11px] sm:text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full">
+                    Apresentação Oficial • Puro Mel GO
+                  </span>
+                  <h3 class="font-display font-extrabold text-lg sm:text-2xl text-white">
+                    Clique para Assistir a Apresentação do Método
+                  </h3>
+                  <p class="producer-ui text-stone-400 text-xs sm:text-sm">
+                    (Produtor: clique na engrenagem acima ou no rodapé para colar seu link do YouTube, Vimeo ou MP4)
+                  </p>
+                </div>
+              </div>
+
+              <!-- Barra inferior simulada de player -->
+              <div class="absolute bottom-0 inset-x-0 bg-black/80 px-4 py-2.5 flex items-center justify-between text-xs text-stone-300 border-t border-white/10">
+                <div class="flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-honey-400"></span>
+                  <span>Som ativado • Alta Definição</span>
+                </div>
+                <span class="text-honey-400 font-semibold">00:00 / 03:45</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- BOTÃO CTA PRINCIPAL ABAIXO DA VSL (Com suporte a Delay opcional) -->
+      <div id="heroCtaWrapper" class="mt-8 sm:mt-10 max-w-2xl mx-auto transition-all duration-500">
+        <a href="#oferta" class="btn-pulse w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-gradient-to-r from-honey-500 to-honey-600 hover:from-honey-400 hover:to-honey-500 text-charcoal font-display font-extrabold text-base sm:text-xl px-8 sm:px-10 py-4 sm:py-5 rounded-2xl shadow-2xl transition-all duration-200 transform hover:-translate-y-0.5 text-center">
+          <span>QUERO COMEÇAR NA APICULTURA AGORA</span>
+          <svg class="w-6 h-6 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+        </a>
+
+        <!-- Micro-provas abaixo do botão -->
+        <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs sm:text-sm text-stone-400 mt-4">
+          <span class="flex items-center gap-1.5">
+            <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            Entrega Imediata em PDF
+          </span>
+          <span class="flex items-center gap-1.5">
+            <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            Vídeos Práticos Inclusos
+          </span>
+          <span class="flex items-center gap-1.5">
+            <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            7 Dias de Garantia Incondicional
+          </span>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- 3. SEÇÃO 'PARA QUEM É ESTE GUIA?' -->
+  <section class="py-16 sm:py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16 reveal">
+        <span class="text-honey-600 font-bold text-xs sm:text-sm uppercase tracking-widest">Identificação</span>
+        <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-charcoal mt-2">
+          Para Quem é Este Guia Prático?
+        </h2>
+        <p class="text-stone-600 mt-4 text-base sm:text-lg">
+          A apicultura une cuidado com a natureza e oportunidades reais de lucro. Mas começar sem método técnico faz muitos perderem enxames ou gastarem dinheiro errado. Este material foi criado para você:
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Card 1 -->
+        <div class="reveal bg-honey-50/70 border border-honey-200 rounded-2xl p-6 hover:shadow-lg hover:border-honey-400 transition-all">
+          <div class="w-12 h-12 rounded-xl bg-honey-500 text-charcoal flex items-center justify-center mb-5 shadow-sm">
+            <!-- Ícone Escudo / Segurança -->
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+          </div>
+          <h3 class="font-display font-bold text-lg text-charcoal mb-2">Iniciantes Absolutos</h3>
+          <p class="text-stone-600 text-sm leading-relaxed">
+            Para quem nunca mexeu com abelhas e deseja montar o primeiro apiário com total segurança, sem medo e evitando erros de principiante.
+          </p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="reveal bg-honey-50/70 border border-honey-200 rounded-2xl p-6 hover:shadow-lg hover:border-honey-400 transition-all">
+          <div class="w-12 h-12 rounded-xl bg-forest-900 text-honey-400 flex items-center justify-center mb-5 shadow-sm">
+            <!-- Ícone Lucro / Campo -->
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h3 class="font-display font-bold text-lg text-charcoal mb-2">Renda Extra ou Principal</h3>
+          <p class="text-stone-600 text-sm leading-relaxed">
+            Para quem busca uma fonte lucrativa no campo, seja em propriedade própria ou instalando caixas em parceria com produtores rurais.
+          </p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="reveal bg-honey-50/70 border border-honey-200 rounded-2xl p-6 hover:shadow-lg hover:border-honey-400 transition-all">
+          <div class="w-12 h-12 rounded-xl bg-honey-500 text-charcoal flex items-center justify-center mb-5 shadow-sm">
+            <!-- Ícone Alerta / Proteção Enxame -->
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          </div>
+          <h3 class="font-display font-bold text-lg text-charcoal mb-2">Quem Perde Enxames</h3>
+          <p class="text-stone-600 text-sm leading-relaxed">
+            Para apicultores que já têm algumas caixas, mas sofrem com enxames fracos, rainhas velhas ou abandono de colmeias na entressafra.
+          </p>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="reveal bg-honey-50/70 border border-honey-200 rounded-2xl p-6 hover:shadow-lg hover:border-honey-400 transition-all">
+          <div class="w-12 h-12 rounded-xl bg-forest-900 text-honey-400 flex items-center justify-center mb-5 shadow-sm">
+            <!-- Ícone Colmeia / Super Enxame -->
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+          </div>
+          <h3 class="font-display font-bold text-lg text-charcoal mb-2">Foco em Super Enxames</h3>
+          <p class="text-stone-600 text-sm leading-relaxed">
+            Para quem quer sair do amadorismo e aplicar um cronograma anual exato de manejo para multiplicar colmeias e maximizar melgueiras.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. SEÇÃO 'O QUE VOCÊ VAI APRENDER (OS 8 MÓDULOS COMPLETOS)' -->
+  <section class="py-16 sm:py-24 bg-honeycomb-light border-y border-honey-200">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16 reveal">
+        <span class="inline-block bg-honey-100 text-honey-700 font-bold text-xs uppercase tracking-widest px-3 py-1 rounded-full border border-honey-300">Conteúdo Programático</span>
+        <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-charcoal mt-3">
+          O Que Você Vai Aprender Nos 8 Módulos Completos
+        </h2>
+        <p class="text-stone-600 mt-4 text-base sm:text-lg">
+          Sem teoria complicada. Cada capítulo foi estruturado como um manual de campo prático e ilustrado para você consultar sempre que precisar.
+        </p>
+      </div>
+
+      <!-- Grade dos 8 Módulos -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+
+        <!-- Módulo 01 -->
+        <div class="reveal bg-white rounded-2xl p-6 sm:p-7 shadow-sm border border-stone-200/80 hover:border-honey-500 transition-all flex gap-4 sm:gap-5">
+          <div class="shrink-0 w-12 h-12 rounded-2xl bg-charcoal text-honey-400 font-display font-extrabold text-lg flex items-center justify-center shadow">
+            01
+          </div>
+          <div>
+            <h3 class="font-display font-bold text-lg sm:text-xl text-charcoal mb-2">Conhecendo as Abelhas na Prática</h3>
+            <p class="text-stone-600 text-sm leading-relaxed">
+              Domine a biologia da colônia (Rainha, Operárias e Zangões), a tabela exata do ciclo de evolução em dias, o sistema de comunicação pelas danças e por que a posição do Sol define a orientação das suas colmeias.
+            </p>
+          </div>
+        </div>
+
+        <!-- Módulo 02 -->
+        <div class="reveal bg-white rounded-2xl p-6 sm:p-7 shadow-sm border border-stone-200/80 hover:border-honey-500 transition-all flex gap-4 sm:gap-5">
+          <div class="shrink-0 w-12 h-12 rounded-2xl bg-charcoal text-honey-400 font-display font-extrabold text-lg flex items-center justify-center shadow">
+            02
+          </div>
+          <div>
+            <h3 class="font-display font-bold text-lg sm:text-xl text-charcoal mb-2">Equipamentos de Segurança e Material Padrão</h3>
+            <p class="text-stone-600 text-sm leading-relaxed">
+              Como escolher o macacão ideal (dupla camada, super ventilado e 100% anti-ferroada) e como operar o <strong>fumigador</strong> corretamente usando serragem grossa não tratada para gerar fumaça fria que acalma sem estressar.
+            </p>
+          </div>
+        </div>
+
+        <!-- Módulo 03 -->
+        <div class="reveal bg-white rounded-2xl p-6 sm:p-7 shadow-sm border border-stone-200/80 hover:border-honey-500 transition-all flex gap-4 sm:gap-5">
+          <div class="shrink-0 w-12 h-12 rounded-2xl bg-charcoal text-honey-400 font-display font-extrabold text-lg flex items-center justify-center shadow">
+            03
+          </div>
+          <div>
+            <h3 class="font-display font-bold text-lg sm:text-xl text-charcoal mb-2">Mapeamento e Instalação de Apiário</h3>
+            <p class="text-stone-600 text-sm leading-relaxed">
+              Os fatores determinantes para escolher o local ideal (água, acesso, distância segura e pastagem apícola) e como fazer o <strong>mapeamento via satélite no Google Earth</strong> para calcular quantas colmeias sua área suporta.
+            </p>
+          </div>
+        </div>
+
+        <!-- Módulo 04 -->
+        <div class="reveal bg-white rounded-2xl p-6 sm:p-7 shadow-sm border border-stone-200/80 hover:border-honey-500 transition-all flex gap-4 sm:gap-5">
+          <div class="shrink-0 w-12 h-12 rounded-2xl bg-charcoal text-honey-400 font-display font-extrabold text-lg flex items-center justify-center shadow">
+            04
+          </div>
+          <div>
+            <h3 class="font-display font-bold text-lg sm:text-xl text-charcoal mb-2">Povoamento de Apiário Sem Gastar Comprando Abelhas</h3>
+            <p class="text-stone-600 text-sm leading-relaxed">
+              Domine a técnica da <strong>Caixa-Isca</strong>: os melhores pontos estratégicos para instalar, como atrair enxames voadores na temporada e o sinal exato (quando roem o papelão) para transferir para a caixa padrão.
+            </p>
+          </div>
+        </div>
+
+        <!-- Módulo 05 -->
+        <div class="reveal bg-white rounded-2xl p-6 sm:p-7 shadow-sm border border-stone-200/80 hover:border-honey-500 transition-all flex gap-4 sm:gap-5">
+          <div class="shrink-0 w-12 h-12 rounded-2xl bg-charcoal text-honey-400 font-display font-extrabold text-lg flex items-center justify-center shadow">
+            05
+          </div>
+          <div>
+            <h3 class="font-display font-bold text-lg sm:text-xl text-charcoal mb-2">Manejo e Revisão das Colmeias</h3>
+            <p class="text-stone-600 text-sm leading-relaxed">
+              O protocolo completo de segurança antes de abrir qualquer caixa, os melhores horários e condições climáticas, e como preencher o <strong>Caderno de Inspeção</strong> para controlar postura e evolução de cada colmeia numerada.
+            </p>
+          </div>
+        </div>
+
+        <!-- Módulo 06 (Destaque Super Enxame) -->
+        <div class="reveal bg-gradient-to-br from-forest-900 to-forest-950 text-white rounded-2xl p-6 sm:p-7 shadow-md border-2 border-honey-500 flex gap-4 sm:gap-5">
+          <div class="shrink-0 w-12 h-12 rounded-2xl bg-honey-500 text-charcoal font-display font-extrabold text-lg flex items-center justify-center shadow">
+            06
+          </div>
+          <div>
+            <div class="inline-block bg-honey-500/20 text-honey-300 text-[11px] font-bold uppercase tracking-wider px-2 py-0.5 rounded mb-1">O Segredo da Alta Produção</div>
+            <h3 class="font-display font-bold text-lg sm:text-xl text-white mb-2">Manejos Avançados: Como Chegar a um Super Enxame</h3>
+            <ul class="text-stone-200 text-sm space-y-1.5 leading-relaxed">
+              <li>• <strong class="text-honey-300">Entressafra:</strong> Redução de espaço, redutor de alvado e alimentação de subsistência (50% água e açúcar).</li>
+              <li>• <strong class="text-honey-300">Pré-Safra (60 dias antes):</strong> Troca de favos velhos e receita completa da <strong>Alimentação Energética</strong> (xarope concentrado + promotor de crescimento + sal na medida exata para ativar a enzima invertase).</li>
+              <li>• <strong class="text-honey-300">Safra:</strong> O momento exato (6 a 8 quadros de cria madura) para colocar melgueiras sem provocar enxameação.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Módulo 07 -->
+        <div class="reveal bg-white rounded-2xl p-6 sm:p-7 shadow-sm border border-stone-200/80 hover:border-honey-500 transition-all flex gap-4 sm:gap-5">
+          <div class="shrink-0 w-12 h-12 rounded-2xl bg-charcoal text-honey-400 font-display font-extrabold text-lg flex items-center justify-center shadow">
+            07
+          </div>
+          <div>
+            <h3 class="font-display font-bold text-lg sm:text-xl text-charcoal mb-2">Troca de Rainha (50% da Sua Produção)</h3>
+            <p class="text-stone-600 text-sm leading-relaxed">
+              Aprenda a identificar sinais visuais de uma rainha velha ou desgastada (asas abertas, postura falhada) e aplique passo a passo o <strong>Método Natural de Troca de Rainha</strong> e o reaproveitamento de realeiras com protetor.
+            </p>
+          </div>
+        </div>
+
+        <!-- Módulo 08 -->
+        <div class="reveal bg-white rounded-2xl p-6 sm:p-7 shadow-sm border border-stone-200/80 hover:border-honey-500 transition-all flex gap-4 sm:gap-5">
+          <div class="shrink-0 w-12 h-12 rounded-2xl bg-charcoal text-honey-400 font-display font-extrabold text-lg flex items-center justify-center shadow">
+            08
+          </div>
+          <div>
+            <h3 class="font-display font-bold text-lg sm:text-xl text-charcoal mb-2">Organograma da Apicultura Produtiva</h3>
+            <p class="text-stone-600 text-sm leading-relaxed">
+              Um fluxograma visual completo que conecta todas as etapas do ano (Entressafra → Pré-Safra → Safra) em uma sequência lógica para você seguir e garantir o sucesso na colheita.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. SEÇÃO DE BÔNUS EXCLUSIVOS -->
+  <section class="py-16 sm:py-24 bg-charcoal text-white relative overflow-hidden">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16 reveal">
+        <span class="inline-block bg-honey-500/20 text-honey-400 border border-honey-500/40 font-bold text-xs uppercase tracking-widest px-3.5 py-1 rounded-full">Presentes Inclusos</span>
+        <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-white mt-3">
+          Bônus Exclusivos Para Acelerar Seus Resultados no Campo
+        </h2>
+        <p class="text-stone-300 mt-4 text-base sm:text-lg">
+          Além de todo o conteúdo escrito e ilustrado do e-book, você recebe acesso direto a ferramentas práticas de apoio:
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Bônus 1 -->
+        <div class="reveal bg-stone-900/90 border border-honey-500/40 rounded-2xl p-7 relative flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-5">
+              <span class="bg-honey-500 text-charcoal font-extrabold text-xs uppercase px-3 py-1 rounded-lg">Bônus #01</span>
+              <span class="text-stone-400 text-xs line-through">Valor: R$ 47,00</span>
+            </div>
+            <div class="w-12 h-12 rounded-xl bg-honey-500/15 text-honey-400 flex items-center justify-center mb-4">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <h3 class="font-display font-bold text-xl text-white mb-2">Aulas Práticas em Vídeo</h3>
+            <p class="text-stone-300 text-sm leading-relaxed">
+              Links diretos dentro do e-book mostrando na prática: montagem de caixa-isca do zero, transferência para caixa padrão, troca de cera e puxada natural de realeiras.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-stone-800 text-emerald-400 text-xs font-bold uppercase tracking-wider">
+            ✓ Incluso Gratuitamente
+          </div>
+        </div>
+
+        <!-- Bônus 2 -->
+        <div class="reveal bg-stone-900/90 border border-honey-500/40 rounded-2xl p-7 relative flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-5">
+              <span class="bg-honey-500 text-charcoal font-extrabold text-xs uppercase px-3 py-1 rounded-lg">Bônus #02</span>
+              <span class="text-stone-400 text-xs line-through">Valor: R$ 29,00</span>
+            </div>
+            <div class="w-12 h-12 rounded-xl bg-honey-500/15 text-honey-400 flex items-center justify-center mb-4">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+            </div>
+            <h3 class="font-display font-bold text-xl text-white mb-2">Modelo de Ficha de Inspeção</h3>
+            <p class="text-stone-300 text-sm leading-relaxed">
+              Modelo estruturado do Caderno de Inspeção de Colmeias para você imprimir e levar ao apiário, registrando população, rainha, postura e ordem dos quadros.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-stone-800 text-emerald-400 text-xs font-bold uppercase tracking-wider">
+            ✓ Incluso Gratuitamente
+          </div>
+        </div>
+
+        <!-- Bônus 3 -->
+        <div class="reveal bg-stone-900/90 border border-honey-500/40 rounded-2xl p-7 relative flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-5">
+              <span class="bg-honey-500 text-charcoal font-extrabold text-xs uppercase px-3 py-1 rounded-lg">Bônus #03</span>
+              <span class="text-stone-400 text-xs line-through">Valor: R$ 27,00</span>
+            </div>
+            <div class="w-12 h-12 rounded-xl bg-honey-500/15 text-honey-400 flex items-center justify-center mb-4">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+            </div>
+            <h3 class="font-display font-bold text-xl text-white mb-2">Organograma Visual de Manejo Anual</h3>
+            <p class="text-stone-300 text-sm leading-relaxed">
+              O mapa estratégico de consulta rápida para você nunca errar o timing entre os manejos de Entressafra, Pré-safra e colocação de melgueiras na Safra.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-stone-800 text-emerald-400 text-xs font-bold uppercase tracking-wider">
+            ✓ Incluso Gratuitamente
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. SEÇÃO DE OFERTA E CHECKOUT COM MOCKUP 3D DO E-BOOK -->
+  <section id="oferta" class="py-16 sm:py-24 bg-honey-50 relative">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="reveal bg-white rounded-3xl shadow-2xl border-4 border-honey-500 overflow-hidden">
+        <!-- Cabeçalho da Oferta -->
+        <div class="bg-gradient-to-r from-forest-950 via-forest-900 to-forest-950 text-white py-6 px-6 text-center border-b-2 border-honey-500">
+          <span class="inline-block bg-honey-500 text-charcoal font-extrabold text-xs uppercase tracking-widest px-3 py-1 rounded-full mb-2">Oferta Especial por Tempo Limitado</span>
+          <h2 class="font-serif font-extrabold text-2xl sm:text-3xl lg:text-4xl">
+            Comece Hoje Sua Jornada na Apicultura Produtiva
+          </h2>
+        </div>
+
+        <div class="p-6 sm:p-10 lg:p-12">
+          <!-- Grid: Mockup 3D do E-book à esquerda + Entregáveis e Preço à direita -->
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+            
+            <!-- Coluna Mockup 3D do Produto (5 colunas) -->
+            <div class="lg:col-span-5 flex flex-col items-center justify-center">
+              <div class="book-container relative py-3">
+                <div class="absolute -top-2 -right-3 z-20 bg-forest-900 border-2 border-honey-400 text-white px-3 py-1.5 rounded-xl shadow-xl transform rotate-3">
+                  <p class="text-[10px] uppercase tracking-wider text-honey-300 font-bold">Edição Digital</p>
+                  <p class="text-xs font-extrabold">26 Páginas + Vídeos</p>
+                </div>
+
+                <!-- Capa 3D do E-book -->
+                <div class="book-3d w-[240px] sm:w-[265px] h-[345px] sm:h-[380px] rounded-r-2xl rounded-l-sm bg-gradient-to-br from-stone-900 via-charcoal to-stone-950 border-2 border-honey-500/70 p-5 flex flex-col justify-between relative overflow-hidden">
+                  <div class="absolute inset-0 opacity-20 bg-honeycomb pointer-events-none"></div>
+                  <div class="absolute -bottom-10 -right-10 w-40 h-40 bg-honey-500/30 rounded-full blur-2xl"></div>
+
+                  <div class="relative z-10 flex items-center justify-between border-b border-honey-500/30 pb-2.5">
+                    <span class="bg-honey-500 text-charcoal text-[9px] font-extrabold uppercase tracking-widest px-2 py-0.5 rounded">GUIA COMPLETO</span>
+                    <span class="text-honey-400 font-display font-bold text-xs">Puro Mel GO</span>
+                  </div>
+
+                  <div class="relative z-10 my-auto text-center space-y-2.5">
+                    <div class="w-20 h-20 mx-auto relative flex items-center justify-center">
+                      <svg viewBox="0 0 100 100" class="w-full h-full drop-shadow-[0_4px_12px_rgba(245,158,11,0.4)]">
+                        <polygon points="50,4 92,27 92,73 50,96 8,73 8,27" fill="#FEF3C7" stroke="#F59E0B" stroke-width="5"/>
+                        <path d="M36 58L50 50L64 58V73L50 81L36 73V58Z" fill="#D97706"/>
+                        <path d="M50 50V65M50 65L64 58M50 65L36 58" stroke="#FEF3C7" stroke-width="2"/>
+                        <ellipse cx="50" cy="36" rx="10" ry="6.5" fill="#1A1A1A"/>
+                        <path d="M45 30V42M50 29V43M55 30V42" stroke="#FBBF24" stroke-width="2.2"/>
+                        <ellipse cx="46" cy="26" rx="6" ry="3.5" transform="rotate(-25 46 26)" fill="#F59E0B" fill-opacity="0.65"/>
+                        <ellipse cx="54" cy="26" rx="6" ry="3.5" transform="rotate(25 54 26)" fill="#F59E0B" fill-opacity="0.65"/>
+                      </svg>
+                    </div>
+
+                    <h3 class="font-display font-extrabold text-lg sm:text-xl text-white uppercase leading-tight tracking-tight">
+                      Guia Prático de Como Iniciar na <span class="text-honey-400">Apicultura</span>
+                    </h3>
+                    <div class="inline-block bg-forest-900/90 border border-honey-500/40 px-2.5 py-0.5 rounded-full">
+                      <p class="text-honey-200 text-[10px] font-bold tracking-widest uppercase">Básico ao Avançado</p>
+                    </div>
+                  </div>
+
+                  <div class="relative z-10 border-t border-honey-500/30 pt-2.5 flex items-center justify-between text-[10px] text-stone-300">
+                    <span>E-BOOK PDF</span>
+                    <span class="text-honey-400 font-semibold">8 Módulos Práticos</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Coluna Entregáveis + Preço + Botão (7 colunas) -->
+            <div class="lg:col-span-7 space-y-6">
+              <!-- Lista de Entregáveis -->
+              <div class="space-y-3">
+                <div class="flex items-start gap-3">
+                  <span class="shrink-0 w-6 h-6 rounded-full bg-emerald-100 text-forest-900 flex items-center justify-center mt-0.5">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                  </span>
+                  <span class="text-stone-700 text-sm sm:text-base font-medium"><strong>E-book Completo:</strong> Guia Prático de Como Iniciar na Apicultura — Básico ao Avançado (26 páginas ilustradas)</span>
+                </div>
+                <div class="flex items-start gap-3">
+                  <span class="shrink-0 w-6 h-6 rounded-full bg-emerald-100 text-forest-900 flex items-center justify-center mt-0.5">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                  </span>
+                  <span class="text-stone-700 text-sm sm:text-base font-medium"><strong>Receitas Exatas:</strong> Alimentação de Subsistência e Alimentação Energética para puxada rápida de cera</span>
+                </div>
+                <div class="flex items-start gap-3">
+                  <span class="shrink-0 w-6 h-6 rounded-full bg-emerald-100 text-forest-900 flex items-center justify-center mt-0.5">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                  </span>
+                  <span class="text-stone-700 text-sm sm:text-base font-medium"><strong>Bônus 1:</strong> Acesso aos Vídeos Práticos de Campo (Caixa-Isca, Transferência e Troca de Cera)</span>
+                </div>
+                <div class="flex items-start gap-3">
+                  <span class="shrink-0 w-6 h-6 rounded-full bg-emerald-100 text-forest-900 flex items-center justify-center mt-0.5">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                  </span>
+                  <span class="text-stone-700 text-sm sm:text-base font-medium"><strong>Bônus 2 e 3:</strong> Modelo de Ficha de Inspeção + Organograma Anual da Apicultura Produtiva</span>
+                </div>
+                <div class="flex items-start gap-3">
+                  <span class="shrink-0 w-6 h-6 rounded-full bg-emerald-100 text-forest-900 flex items-center justify-center mt-0.5">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                  </span>
+                  <span class="text-stone-700 text-sm sm:text-base font-medium"><strong>Acesso Vitalício:</strong> Leia no celular, tablet, computador ou imprima para levar ao apiário</span>
+                </div>
+              </div>
+
+              <!-- Bloco de Preço Ancorado -->
+              <div class="bg-honey-50 border border-honey-200 rounded-2xl p-5 text-center">
+                <p class="text-stone-500 text-sm font-medium">
+                  De <span class="line-through text-red-600 font-bold" id="displayOldPrice">R$ 97,00</span> por apenas:
+                </p>
+                <div class="my-1.5 flex items-baseline justify-center gap-1">
+                  <span class="font-display font-extrabold text-4xl sm:text-5xl text-forest-900 tracking-tight" id="displayMainPrice">R$ 47,00</span>
+                  <span class="text-stone-600 font-bold text-sm">à vista</span>
+                </div>
+                <p class="text-stone-600 text-xs sm:text-sm font-medium" id="displayInstallments">
+                  ou em até <strong>5x de R$ 10,11</strong> no cartão de crédito
+                </p>
+              </div>
+
+              <!-- Botão de Compra Pulsante -->
+              <div>
+                <button onclick="handleBuyClick()" class="btn-pulse w-full bg-gradient-to-r from-emerald-600 to-forest-900 hover:from-emerald-500 hover:to-forest-800 text-white font-display font-extrabold text-base sm:text-lg py-4 px-6 rounded-2xl shadow-xl transition-all duration-200 transform hover:-translate-y-0.5 flex items-center justify-center gap-3 cursor-pointer">
+                  <span>SIM! QUERO GARANTIR MEU GUIA AGORA</span>
+                  <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                </button>
+
+                <!-- Selos de Segurança -->
+                <div class="mt-3 flex flex-wrap items-center justify-center gap-3 text-xs text-stone-500">
+                  <span class="flex items-center gap-1">
+                    <svg class="w-4 h-4 text-emerald-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"/></svg>
+                    Ambiente 100% Seguro
+                  </span>
+                  <span>•</span>
+                  <span>PIX com Liberação Imediata</span>
+                  <span>•</span>
+                  <span>Cartão de Crédito</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- 7. SEÇÃO DE GARANTIA INCONDICIONAL DE 7 DIAS -->
+      <div class="reveal mt-12 bg-white border-2 border-honey-300 rounded-3xl p-6 sm:p-8 shadow-md flex flex-col sm:flex-row items-center gap-6 text-center sm:text-left">
+        <!-- Selo Dourado 7 Dias -->
+        <div class="shrink-0 w-28 h-28 rounded-full bg-gradient-to-br from-honey-400 via-honey-500 to-honey-600 p-1.5 shadow-lg flex items-center justify-center">
+          <div class="w-full h-full rounded-full bg-charcoal border-2 border-honey-200 flex flex-col items-center justify-center text-center p-2">
+            <span class="font-display font-extrabold text-2xl text-honey-400 leading-none">7 DIAS</span>
+            <span class="text-[9px] font-bold uppercase tracking-wider text-white mt-1">Garantia Total</span>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="font-display font-extrabold text-xl sm:text-2xl text-charcoal">
+            7 Dias de Garantia Incondicional — Risco Zero
+          </h3>
+          <p class="text-stone-600 text-sm sm:text-base mt-2 leading-relaxed">
+            Adquira o <strong>Guia Prático Puro Mel GO</strong> agora, leia todos os capítulos, assista aos vídeos e analise as técnicas. Se por qualquer motivo você achar que o conteúdo não vai ajudar na sua criação de abelhas, basta solicitar o reembolso dentro de 7 dias e devolveremos <strong>100% do seu dinheiro</strong> sem perguntas ou burocracia.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 8. PERGUNTAS FREQUENTES (FAQ INTERATIVO EM ACORDEÃO) -->
+  <section class="py-16 sm:py-24 bg-white border-t border-stone-200">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 reveal">
+        <span class="text-honey-600 font-bold text-xs uppercase tracking-widest">Tire Suas Dúvidas</span>
+        <h2 class="font-display font-extrabold text-2xl sm:text-3xl text-charcoal mt-2">
+          Perguntas Frequentes
+        </h2>
+      </div>
+
+      <div class="space-y-4 reveal" id="faqContainer">
+        <!-- FAQ 1 -->
+        <div class="border border-stone-200 rounded-2xl overflow-hidden bg-stone-50/50">
+          <button type="button" class="faq-btn w-full px-6 py-4 text-left font-display font-bold text-base sm:text-lg text-charcoal flex items-center justify-between gap-4 hover:bg-honey-50/60 transition-colors">
+            <span>Nunca mexi com abelhas na vida. Esse guia serve para mim?</span>
+            <svg class="faq-icon w-5 h-5 text-honey-600 shrink-0 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-content hidden px-6 pb-5 text-stone-600 text-sm sm:text-base leading-relaxed border-t border-stone-100 pt-3">
+            Com certeza! O e-book foi estruturado exatamente para pegar você pela mão desde o zero: começa explicando como as abelhas vivem, os equipamentos de proteção obrigatórios, como usar o fumigador sem medo e como capturar seu primeiro enxame usando caixas-iscas econômicas.
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="border border-stone-200 rounded-2xl overflow-hidden bg-stone-50/50">
+          <button type="button" class="faq-btn w-full px-6 py-4 text-left font-display font-bold text-base sm:text-lg text-charcoal flex items-center justify-between gap-4 hover:bg-honey-50/60 transition-colors">
+            <span>Já crio abelhas, vou aprender técnicas avançadas?</span>
+            <svg class="faq-icon w-5 h-5 text-honey-600 shrink-0 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-content hidden px-6 pb-5 text-stone-600 text-sm sm:text-base leading-relaxed border-t border-stone-100 pt-3">
+            Sim! Os módulos 06, 07 e 08 são focados em alta produtividade: você terá acesso às receitas exatas de alimentação de subsistência e energética (com promotor de crescimento e sal para ativar a invertase), troca estratégica de cera velha, momento exato de inserir melgueiras e o método natural de substituição de rainhas.
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="border border-stone-200 rounded-2xl overflow-hidden bg-stone-50/50">
+          <button type="button" class="faq-btn w-full px-6 py-4 text-left font-display font-bold text-base sm:text-lg text-charcoal flex items-center justify-between gap-4 hover:bg-honey-50/60 transition-colors">
+            <span>Qual é o formato do material e como vou receber?</span>
+            <svg class="faq-icon w-5 h-5 text-honey-600 shrink-0 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-content hidden px-6 pb-5 text-stone-600 text-sm sm:text-base leading-relaxed border-t border-stone-100 pt-3">
+            O material é um E-book digital em formato PDF de alta qualidade (26 páginas ilustradas) com links clicáveis internos que dão acesso direto aos vídeos práticos de campo. Assim que o pagamento for confirmado, você recebe o acesso imediatamente no seu e-mail.
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="border border-stone-200 rounded-2xl overflow-hidden bg-stone-50/50">
+          <button type="button" class="faq-btn w-full px-6 py-4 text-left font-display font-bold text-base sm:text-lg text-charcoal flex items-center justify-between gap-4 hover:bg-honey-50/60 transition-colors">
+            <span>Consigo ler pelo celular ou imprimir?</span>
+            <svg class="faq-icon w-5 h-5 text-honey-600 shrink-0 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-content hidden px-6 pb-5 text-stone-600 text-sm sm:text-base leading-relaxed border-t border-stone-100 pt-3">
+            Sim! Como o acesso é vitalício, você pode ler diretamente na tela do seu celular, tablet ou computador (mesmo sem internet após baixar) e também pode imprimir o guia ou a ficha de inspeção para levar direto para o seu apiário.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. RODAPÉ -->
+  <footer class="bg-charcoal text-stone-400 py-10 px-4 border-t border-stone-800 text-center">
+    <div class="max-w-5xl mx-auto space-y-4">
+      <div class="flex items-center justify-center gap-2">
+        <span class="font-display font-extrabold text-lg text-honey-400">Puro Mel <span class="text-white">GO</span></span>
+      </div>
+      <p class="text-xs sm:text-sm max-w-xl mx-auto">
+        Guia Prático de Como Iniciar na Apicultura — Básico ao Avançado. Todos os direitos reservados.
+      </p>
+      <p class="text-[11px] text-stone-500">
+        Os resultados na produção apícola dependem da aplicação correta dos manejos, condições climáticas e floração local.
+      </p>
+
+      <!-- Botão discreto para o Produtor configurar VSL, delay, preço e link real -->
+      <div class="pt-4 producer-ui">
+        <button onclick="toggleProducerPanel()" class="inline-flex items-center gap-1.5 text-[11px] text-stone-500 hover:text-honey-400 border border-stone-700/80 hover:border-honey-500/50 rounded-full px-3.5 py-1.5 transition-colors cursor-pointer">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          <span>Modo Produtor: Configurar VSL, Preço e Link de Checkout</span>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MODAL DE CHECKOUT INTERATIVO (SIMULAÇÃO ELEGANTE) -->
+  <div id="checkoutModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/75 backdrop-blur-sm p-4">
+    <div class="bg-white rounded-3xl max-w-md w-full overflow-hidden shadow-2xl border-2 border-honey-500 animate-[fadeIn_0.2s_ease-out]">
+      <!-- Topo Modal -->
+      <div class="bg-charcoal text-white px-6 py-4 flex items-center justify-between border-b border-honey-500/40">
+        <div class="flex items-center gap-2">
+          <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
+          <span class="font-display font-bold text-sm">Checkout Seguro • Puro Mel GO</span>
+        </div>
+        <button onclick="closeCheckoutModal()" class="text-stone-400 hover:text-white p-1 cursor-pointer">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+
+      <!-- Corpo Modal -->
+      <div class="p-6 space-y-5">
+        <div class="bg-honey-50 border border-honey-200 rounded-2xl p-4 flex items-center justify-between">
+          <div>
+            <p class="text-xs font-bold text-honey-700 uppercase">E-book + 3 Bônus</p>
+            <p class="font-display font-bold text-sm text-charcoal">Guia Prático de Apicultura</p>
+          </div>
+          <span class="font-display font-extrabold text-xl text-forest-900" id="modalPriceTag">R$ 47,00</span>
+        </div>
+
+        <!-- Seleção de Método -->
+        <div>
+          <label class="block text-xs font-bold uppercase text-stone-500 mb-2">Escolha a forma de pagamento:</label>
+          <div class="grid grid-cols-2 gap-3">
+            <button type="button" onclick="selectPaymentMethod('pix')" id="btnPayPix" class="border-2 border-emerald-600 bg-emerald-50 text-forest-900 font-bold text-sm py-3 px-4 rounded-xl flex items-center justify-center gap-2 cursor-pointer">
+              <span>⚡ PIX (Imediato)</span>
+            </button>
+            <button type="button" onclick="selectPaymentMethod('card')" id="btnPayCard" class="border-2 border-stone-200 bg-white text-stone-600 font-bold text-sm py-3 px-4 rounded-xl flex items-center justify-center gap-2 cursor-pointer">
+              <span>💳 Cartão</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Conteúdo Dinâmico PIX vs Cartão -->
+        <div id="pixBox" class="space-y-3 text-center bg-stone-50 p-4 rounded-2xl border border-stone-200">
+          <p class="text-xs text-stone-600">Preencha seu e-mail abaixo para receber o PDF e os links dos vídeos logo após o pagamento:</p>
+          <input type="email" id="buyerEmail" placeholder="seu-melhor-email@exemplo.com" class="w-full px-4 py-3 rounded-xl border border-stone-300 text-sm focus:outline-none focus:border-honey-500">
+          <button type="button" onclick="simulateOrderComplete()" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-display font-bold text-sm py-3.5 rounded-xl shadow transition-colors cursor-pointer">
+            GERAR CÓDIGO PIX AGORA
+          </button>
+        </div>
+
+        <div id="cardBox" class="hidden space-y-3 bg-stone-50 p-4 rounded-2xl border border-stone-200">
+          <input type="text" placeholder="Nome impresso no cartão" class="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 text-sm focus:outline-none focus:border-honey-500">
+          <input type="text" placeholder="Número do cartão (0000 0000 0000 0000)" class="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 text-sm focus:outline-none focus:border-honey-500">
+          <div class="grid grid-cols-2 gap-2">
+            <input type="text" placeholder="MM/AA" class="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 text-sm focus:outline-none focus:border-honey-500">
+            <input type="text" placeholder="CVV" class="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 text-sm focus:outline-none focus:border-honey-500">
+          </div>
+          <button type="button" onclick="simulateOrderComplete()" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-display font-bold text-sm py-3.5 rounded-xl shadow transition-colors cursor-pointer">
+            FINALIZAR COMPRA NO CARTÃO
+          </button>
+        </div>
+
+        <!-- Mensagem de Feedback dentro do Modal -->
+        <div id="checkoutFeedback" class="hidden bg-emerald-50 border border-emerald-300 text-forest-900 p-4 rounded-2xl text-xs sm:text-sm space-y-2">
+          <p class="font-bold">✅ Simulação de Checkout Concluída!</p>
+          <p>Para receber pagamentos reais na sua conta, clique em <strong>"Modo Produtor"</strong> no rodapé desta página, cole o seu link de checkout (Hotmart, Kiwify, Eduzz ou Mercado Pago) e baixe a página pronta!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL MODO PRODUTOR (CONFIGURAR VSL, DELAY, PREÇO, LINK REAL E BAIXAR HTML LIMPO) -->
+  <div id="producerModal" class="producer-ui fixed inset-0 z-50 hidden items-center justify-center bg-black/80 backdrop-blur-sm p-4 overflow-y-auto">
+    <div class="bg-stone-900 text-white rounded-3xl max-w-lg w-full overflow-hidden shadow-2xl border border-honey-500 my-auto">
+      <div class="px-6 py-4 bg-charcoal border-b border-stone-800 flex items-center justify-between">
+        <h3 class="font-display font-bold text-base text-honey-400">⚙️ Configurar VSL e Checkout (Modo Produtor)</h3>
+        <button onclick="toggleProducerPanel()" class="text-stone-400 hover:text-white cursor-pointer">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+
+      <div class="p-6 space-y-4 text-sm max-h-[82vh] overflow-y-auto">
+        <p class="text-stone-300 text-xs leading-relaxed">
+          Configure o vídeo da VSL, o atraso opcional do botão e seu link real de pagamento. Ao clicar em <strong>"Baixar HTML Pronto para Publicar"</strong>, você recebe o arquivo final já limpo (sem os botões de edição do produtor) pronto para subir no seu domínio!
+        </p>
+
+        <!-- Configuração da VSL -->
+        <div class="bg-stone-800/60 border border-stone-700 rounded-2xl p-4 space-y-3">
+          <p class="text-xs font-bold uppercase tracking-wider text-honey-400">1. Vídeo de Vendas (VSL)</p>
+          
+          <div>
+            <label class="block text-xs text-stone-300 mb-1">Link do Vídeo (YouTube, Vimeo ou link direto .mp4)</label>
+            <input type="url" id="inputVslUrl" placeholder="Ex: https://www.youtube.com/watch?v=SEU_VIDEO" class="w-full bg-stone-900 border border-stone-700 rounded-xl px-3 py-2.5 text-white text-xs sm:text-sm focus:border-honey-500 focus:outline-none">
+            <span class="block text-[11px] text-stone-400 mt-1">Aceita links normais do YouTube, youtu.be, Shorts, Vimeo ou MP4. Deixe vazio para manter a capa de demonstração.</span>
+          </div>
+
+          <div class="flex items-center justify-between gap-3 pt-1">
+            <div>
+              <label for="inputCtaDelay" class="block text-xs font-semibold text-stone-200">Delay no Botão Abaixo do Vídeo (segundos)</label>
+              <span class="text-[11px] text-stone-400">Use 0 para exibir o botão imediatamente.</span>
+            </div>
+            <input type="number" id="inputCtaDelay" min="0" max="3600" value="0" class="w-24 bg-stone-900 border border-stone-700 rounded-xl px-3 py-2 text-white text-center font-bold focus:border-honey-500 focus:outline-none">
+          </div>
+        </div>
+
+        <!-- Configuração de Preço e Checkout -->
+        <div class="bg-stone-800/60 border border-stone-700 rounded-2xl p-4 space-y-3">
+          <p class="text-xs font-bold uppercase tracking-wider text-honey-400">2. Preço e Link de Checkout</p>
+
+          <div class="grid grid-cols-2 gap-3">
+            <div>
+              <label class="block text-xs text-stone-400 mb-1">Preço De (Riscado)</label>
+              <input type="text" id="inputOldPrice" value="R$ 97,00" class="w-full bg-stone-900 border border-stone-700 rounded-xl px-3 py-2 text-white focus:border-honey-500 focus:outline-none">
+            </div>
+            <div>
+              <label class="block text-xs text-stone-400 mb-1">Preço Por (Atual)</label>
+              <input type="text" id="inputMainPrice" value="R$ 47,00" class="w-full bg-stone-900 border border-stone-700 rounded-xl px-3 py-2 text-white focus:border-honey-500 focus:outline-none">
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs text-stone-400 mb-1">Texto de Parcelamento</label>
+            <input type="text" id="inputInstallments" value="ou em até 5x de R$ 10,11 no cartão de crédito" class="w-full bg-stone-900 border border-stone-700 rounded-xl px-3 py-2 text-white focus:border-honey-500 focus:outline-none">
+          </div>
+
+          <div>
+            <label class="block text-xs text-stone-400 mb-1">Link Real de Checkout (Hotmart, Kiwify, Eduzz, Mercado Pago...)</label>
+            <input type="url" id="inputCheckoutUrl" placeholder="https://pay.kiwify.com.br/seu-produto" class="w-full bg-stone-900 border border-stone-700 rounded-xl px-3 py-2 text-white focus:border-honey-500 focus:outline-none">
+          </div>
+        </div>
+
+        <div id="producerStatus" class="hidden bg-emerald-950/90 border border-emerald-500/50 text-emerald-300 px-3 py-2 rounded-xl text-xs font-semibold text-center">
+          ✓ Configurações salvas e aplicadas na página!
+        </div>
+
+        <div class="pt-1 flex flex-col sm:flex-row gap-3">
+          <button type="button" onclick="applyProducerSettings()" class="flex-1 bg-honey-500 hover:bg-honey-400 text-charcoal font-bold py-3 px-4 rounded-xl transition-colors cursor-pointer">
+            Aplicar na Página
+          </button>
+          <button type="button" onclick="downloadConfiguredHtml()" class="flex-1 bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3 px-4 rounded-xl transition-colors flex items-center justify-center gap-2 cursor-pointer shadow-lg">
+            <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+            <span>Baixar HTML Pronto para Publicar</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCRIPTS DE INTERATIVIDADE E CONTROLE DA VSL -->
+  <script>
+    // Configuração padrão embutida (atualizada automaticamente ao baixar o HTML pronto)
+    window.PAGE_CONFIG = {
+      vslUrl: "",
+      ctaDelaySeconds: 0,
+      oldPrice: "R$ 97,00",
+      mainPrice: "R$ 47,00",
+      installments: "ou em até <strong>5x de R$ 10,11</strong> no cartão de crédito",
+      checkoutUrl: ""
+    };
+
+    let delayTimer = null;
+    let demoSlideTimer = null;
+
+    // Converte links do YouTube, Vimeo ou MP4 em elemento incorporável
+    function parseVideoSource(url) {
+      if (!url || typeof url !== 'string') return null;
+      const cleanUrl = url.trim();
+      if (!cleanUrl) return null;
+
+      // 1. YouTube (watch?v=, youtu.be/, shorts/, embed/, live/)
+      const ytRegex = /(?:youtube\.com\/(?:watch\?v=|embed\/|shorts\/|live\/|v\/)|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
+      const ytMatch = cleanUrl.match(ytRegex);
+      if (ytMatch && ytMatch[1]) {
+        return {
+          type: 'iframe',
+          src: `https://www.youtube.com/embed/${ytMatch[1]}?rel=0&modestbranding=1&playsinline=1`
+        };
+      }
+
+      // 2. Vimeo (vimeo.com/123456789 ou player.vimeo.com/video/123456789)
+      const vimeoRegex = /(?:vimeo\.com\/|player\.vimeo\.com\/video\/)(\d+)/;
+      const vimeoMatch = cleanUrl.match(vimeoRegex);
+      if (vimeoMatch && vimeoMatch[1]) {
+        return {
+          type: 'iframe',
+          src: `https://player.vimeo.com/video/${vimeoMatch[1]}?title=0&byline=0&portrait=0`
+        };
+      }
+
+      // 3. Arquivo direto de vídeo (.mp4, .webm, .ogg)
+      if (/\.(mp4|webm|ogg)(\?.*)?$/i.test(cleanUrl)) {
+        return {
+          type: 'video',
+          src: cleanUrl
+        };
+      }
+
+      // 4. Outro link de embed genérico
+      if (cleanUrl.startsWith('http://') || cleanUrl.startsWith('https://')) {
+        return {
+          type: 'iframe',
+          src: cleanUrl
+        };
+      }
+
+      return null;
+    }
+
+    // Renderiza o player de vídeo com base na URL configurada
+    function renderVslPlayer(vslUrl) {
+      const container = document.getElementById('vslPlayerContainer');
+      if (!container) return;
+
+      if (demoSlideTimer) {
+        clearInterval(demoSlideTimer);
+        demoSlideTimer = null;
+      }
+
+      const parsed = parseVideoSource(vslUrl);
+
+      if (!parsed) {
+        // Restaura o placeholder temático interativo
+        container.innerHTML = `
+          <div id="vslPlaceholder" onclick="startVslDemoPreview()" class="w-full h-full bg-gradient-to-br from-forest-950 via-stone-900 to-charcoal flex flex-col items-center justify-center p-6 cursor-pointer relative overflow-hidden">
+            <div class="absolute inset-0 bg-honeycomb opacity-40 pointer-events-none"></div>
+            <div class="relative z-10 flex flex-col items-center text-center max-w-lg space-y-4">
+              <div class="btn-pulse w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-gradient-to-br from-honey-400 to-honey-600 text-charcoal flex items-center justify-center shadow-2xl transform group-hover:scale-110 transition-transform duration-300 border-4 border-honey-200">
+                <svg class="w-10 h-10 sm:w-12 sm:h-12 ml-1.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <div class="space-y-1.5">
+                <span class="inline-block bg-charcoal/80 border border-honey-500/40 text-honey-300 text-[11px] sm:text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full">
+                  Apresentação Oficial • Puro Mel GO
+                </span>
+                <h3 class="font-display font-extrabold text-lg sm:text-2xl text-white">
+                  Clique para Assistir a Apresentação do Método
+                </h3>
+                <p class="producer-ui text-stone-400 text-xs sm:text-sm">
+                  (Produtor: clique na engrenagem acima ou no rodapé para colar seu link do YouTube, Vimeo ou MP4)
+                </p>
+              </div>
+            </div>
+            <div class="absolute bottom-0 inset-x-0 bg-black/80 px-4 py-2.5 flex items-center justify-between text-xs text-stone-300 border-t border-white/10">
+              <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-honey-400"></span>
+                <span>Som ativado • Alta Definição</span>
+              </div>
+              <span class="text-honey-400 font-semibold">00:00 / 03:45</span>
+            </div>
+          </div>
+        `;
+        return;
+      }
+
+      if (parsed.type === 'iframe') {
+        container.innerHTML = `
+          <iframe
+            class="w-full h-full border-0"
+            src="${parsed.src}"
+            title="Vídeo de Vendas - Guia Prático de Apicultura Puro Mel GO"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
+        `;
+      } else if (parsed.type === 'video') {
+        container.innerHTML = `
+          <video class="w-full h-full object-cover bg-black" controls playsinline preload="metadata">
+            <source src="${parsed.src}" type="video/mp4">
+            Seu navegador não suporta a reprodução de vídeo HTML5.
+          </video>
+        `;
+      }
+    }
+
+    // Prévia animada caso o visitante clique no player antes do produtor colocar um vídeo real
+    function startVslDemoPreview() {
+      const container = document.getElementById('vslPlayerContainer');
+      const slides = [
+        {
+          badge: "PASSO 01 • DO ZERO ABSOLUTO",
+          title: "Como Iniciar na Apicultura com Segurança Total",
+          desc: "Escolha do macacão anti-ferroada, acendimento correto do fumigador com fumaça fria e mapeamento do apiário via Google Earth."
+        },
+        {
+          badge: "PASSO 02 • POVOAMENTO ECONÔMICO",
+          title: "Capture Seus Próprios Enxames com Caixa-Isca",
+          desc: "Aprenda onde instalar as caixas-iscas e o sinal exato para transferir a colônia para a caixa padrão sem perder a rainha."
+        },
+        {
+          badge: "PASSO 03 • FORMAÇÃO DE SUPER ENXAMES",
+          title: "Receita Exata de Alimentação Energética + Troca de Rainha",
+          desc: "Prepare suas colmeias 60 dias antes da safra para puxada rápida de cera e colheitas cheias de mel puro!"
+        }
+      ];
+
+      let currentSlide = 0;
+
+      function renderSlide(idx) {
+        const s = slides[idx];
+        container.innerHTML = `
+          <div class="w-full h-full bg-gradient-to-br from-forest-950 via-charcoal to-stone-950 flex flex-col items-center justify-center p-6 sm:p-10 text-center relative overflow-hidden">
+            <div class="absolute inset-0 bg-honeycomb opacity-35 pointer-events-none"></div>
+            <div class="relative z-10 max-w-2xl space-y-4 animate-[fadeIn_0.4s_ease-out]">
+              <span class="inline-block bg-honey-500 text-charcoal font-extrabold text-xs uppercase tracking-widest px-3.5 py-1 rounded-full">
+                ${s.badge}
+              </span>
+              <h3 class="font-serif font-extrabold text-2xl sm:text-3xl text-white leading-tight">
+                ${s.title}
+              </h3>
+              <p class="text-stone-300 text-sm sm:text-base leading-relaxed">
+                ${s.desc}
+              </p>
+              <div class="pt-2 flex items-center justify-center gap-3">
+                <a href="#oferta" class="bg-emerald-600 hover:bg-emerald-500 text-white font-display font-bold text-xs sm:text-sm px-5 py-2.5 rounded-xl transition-colors">
+                  Quero Acessar o Guia Completo →
+                </a>
+                <button type="button" onclick="renderVslPlayer('')" class="bg-white/10 hover:bg-white/20 text-stone-300 text-xs px-3.5 py-2.5 rounded-xl transition-colors cursor-pointer">
+                  Voltar à Capa
+                </button>
+              </div>
+            </div>
+            <!-- Barra de progresso simulada -->
+            <div class="absolute bottom-0 inset-x-0 bg-black/90 px-4 py-3 border-t border-white/10">
+              <div class="w-full bg-stone-700 h-1.5 rounded-full overflow-hidden mb-1.5">
+                <div class="bg-honey-500 h-full animate-vsl-bar"></div>
+              </div>
+              <div class="flex items-center justify-between text-[11px] text-stone-400">
+                <span>Prévia Interativa do Método Puro Mel GO (${idx + 1}/3)</span>
+                <span class="text-honey-400 font-semibold">Reproduzindo...</span>
+              </div>
+            </div>
+          </div>
+        `;
+      }
+
+      renderSlide(0);
+      demoSlideTimer = setInterval(() => {
+        currentSlide = (currentSlide + 1) % slides.length;
+        renderSlide(currentSlide);
+      }, 6000);
+    }
+
+    // Controla o delay opcional no botão principal abaixo do vídeo
+    function applyCtaDelay(seconds) {
+      const ctaWrapper = document.getElementById('heroCtaWrapper');
+      if (!ctaWrapper) return;
+
+      if (delayTimer) {
+        clearTimeout(delayTimer);
+        delayTimer = null;
+      }
+
+      const delaySec = parseInt(seconds, 10) || 0;
+      if (delaySec > 0) {
+        ctaWrapper.classList.add('hidden', 'opacity-0');
+        delayTimer = setTimeout(() => {
+          ctaWrapper.classList.remove('hidden');
+          requestAnimationFrame(() => ctaWrapper.classList.remove('opacity-0'));
+        }, delaySec * 1000);
+      } else {
+        ctaWrapper.classList.remove('hidden', 'opacity-0');
+      }
+    }
+
+    // Aplica todas as configurações na interface
+    function syncUiWithConfig(cfg) {
+      document.getElementById('displayOldPrice').textContent = cfg.oldPrice || "R$ 97,00";
+      document.getElementById('displayMainPrice').textContent = cfg.mainPrice || "R$ 47,00";
+      const modalPrice = document.getElementById('modalPriceTag');
+      if (modalPrice) modalPrice.textContent = cfg.mainPrice || "R$ 47,00";
+      document.getElementById('displayInstallments').innerHTML = cfg.installments || "";
+
+      // Preenche os inputs do Modo Produtor caso existam
+      const inVsl = document.getElementById('inputVslUrl');
+      if (inVsl) {
+        inVsl.value = cfg.vslUrl || "";
+        document.getElementById('inputCtaDelay').value = cfg.ctaDelaySeconds || 0;
+        document.getElementById('inputOldPrice').value = cfg.oldPrice || "R$ 97,00";
+        document.getElementById('inputMainPrice').value = cfg.mainPrice || "R$ 47,00";
+        document.getElementById('inputInstallments').value = document.getElementById('displayInstallments').textContent.trim();
+        document.getElementById('inputCheckoutUrl').value = cfg.checkoutUrl || "";
+      }
+
+      renderVslPlayer(cfg.vslUrl);
+      applyCtaDelay(cfg.ctaDelaySeconds);
+    }
+
+    // Inicialização ao carregar a página
+    document.addEventListener('DOMContentLoaded', () => {
+      // Carrega configurações salvas no localStorage (se o produtor estiver editando localmente)
+      try {
+        const saved = localStorage.getItem('puroMelGo_vslConfig');
+        if (saved) {
+          const parsedSaved = JSON.parse(saved);
+          window.PAGE_CONFIG = { ...window.PAGE_CONFIG, ...parsedSaved };
+        }
+      } catch (e) {
+        console.warn('LocalStorage indisponível:', e);
+      }
+
+      syncUiWithConfig(window.PAGE_CONFIG);
+
+      // Animação suave ao rolar a página
+      const reveals = document.querySelectorAll('.reveal');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+
+      reveals.forEach(el => observer.observe(el));
+
+      // Acordeão do FAQ
+      const faqButtons = document.querySelectorAll('.faq-btn');
+      faqButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const content = btn.nextElementSibling;
+          const icon = btn.querySelector('.faq-icon');
+          const isOpen = !content.classList.contains('hidden');
+
+          document.querySelectorAll('.faq-content').forEach(c => c.classList.add('hidden'));
+          document.querySelectorAll('.faq-icon').forEach(i => i.classList.remove('rotate-180'));
+
+          if (!isOpen) {
+            content.classList.remove('hidden');
+            icon.classList.add('rotate-180');
+          }
+        });
+      });
+    });
+
+    // Ação do Botão Principal de Compra
+    function handleBuyClick() {
+      if (window.PAGE_CONFIG.checkoutUrl && window.PAGE_CONFIG.checkoutUrl.trim() !== "") {
+        window.open(window.PAGE_CONFIG.checkoutUrl.trim(), '_blank');
+      } else {
+        const modal = document.getElementById('checkoutModal');
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        document.getElementById('checkoutFeedback').classList.add('hidden');
+      }
+    }
+
+    function closeCheckoutModal() {
+      const modal = document.getElementById('checkoutModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    function selectPaymentMethod(method) {
+      const btnPix = document.getElementById('btnPayPix');
+      const btnCard = document.getElementById('btnPayCard');
+      const pixBox = document.getElementById('pixBox');
+      const cardBox = document.getElementById('cardBox');
+
+      if (method === 'pix') {
+        btnPix.className = "border-2 border-emerald-600 bg-emerald-50 text-forest-900 font-bold text-sm py-3 px-4 rounded-xl flex items-center justify-center gap-2 cursor-pointer";
+        btnCard.className = "border-2 border-stone-200 bg-white text-stone-600 font-bold text-sm py-3 px-4 rounded-xl flex items-center justify-center gap-2 cursor-pointer";
+        pixBox.classList.remove('hidden');
+        cardBox.classList.add('hidden');
+      } else {
+        btnCard.className = "border-2 border-emerald-600 bg-emerald-50 text-forest-900 font-bold text-sm py-3 px-4 rounded-xl flex items-center justify-center gap-2 cursor-pointer";
+        btnPix.className = "border-2 border-stone-200 bg-white text-stone-600 font-bold text-sm py-3 px-4 rounded-xl flex items-center justify-center gap-2 cursor-pointer";
+        cardBox.classList.remove('hidden');
+        pixBox.classList.add('hidden');
+      }
+    }
+
+    function simulateOrderComplete() {
+      document.getElementById('checkoutFeedback').classList.remove('hidden');
+    }
+
+    // Painel do Produtor
+    function toggleProducerPanel() {
+      const modal = document.getElementById('producerModal');
+      if (!modal) return;
+      if (modal.classList.contains('hidden')) {
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+      } else {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+      }
+    }
+
+    function applyProducerSettings() {
+      const vslUrl = document.getElementById('inputVslUrl').value.trim();
+      const ctaDelaySeconds = parseInt(document.getElementById('inputCtaDelay').value, 10) || 0;
+      const oldPrice = document.getElementById('inputOldPrice').value.trim();
+      const mainPrice = document.getElementById('inputMainPrice').value.trim();
+      const installments = document.getElementById('inputInstallments').value.trim();
+      const checkoutUrl = document.getElementById('inputCheckoutUrl').value.trim();
+
+      window.PAGE_CONFIG = {
+        vslUrl,
+        ctaDelaySeconds,
+        oldPrice,
+        mainPrice,
+        installments,
+        checkoutUrl
+      };
+
+      try {
+        localStorage.setItem('puroMelGo_vslConfig', JSON.stringify(window.PAGE_CONFIG));
+      } catch (e) {}
+
+      syncUiWithConfig(window.PAGE_CONFIG);
+
+      const status = document.getElementById('producerStatus');
+      status.classList.remove('hidden');
+      setTimeout(() => status.classList.add('hidden'), 3000);
+    }
+
+    // Exporta um arquivo HTML 100% limpo (sem os controles de edição do produtor) pronto para publicar
+    function downloadConfiguredHtml() {
+      applyProducerSettings();
+
+      // Clona o documento atual para limpar os elementos exclusivos do Modo Produtor antes de exportar
+      const clonedDoc = document.documentElement.cloneNode(true);
+      clonedDoc.querySelectorAll('.producer-ui').forEach(el => el.remove());
+
+      // Garante que os modais fiquem fechados no arquivo exportado
+      const checkoutModalClone = clonedDoc.querySelector('#checkoutModal');
+      if (checkoutModalClone) {
+        checkoutModalClone.classList.add('hidden');
+        checkoutModalClone.classList.remove('flex');
+      }
+
+      // Garante que a prévia animada não esteja rodando no momento da exportação
+      const vslContainerClone = clonedDoc.querySelector('#vslPlayerContainer');
+      if (vslContainerClone && !window.PAGE_CONFIG.vslUrl) {
+        vslContainerClone.innerHTML = document.getElementById('vslPlayerContainer').innerHTML;
+      }
+
+      let htmlContent = "<!DOCTYPE html>\n" + clonedDoc.outerHTML;
+      const serializedConfig = JSON.stringify(window.PAGE_CONFIG, null, 6);
+      htmlContent = htmlContent.replace(/window\.PAGE_CONFIG\s*=\s*\{[\s\S]*?\};/, `window.PAGE_CONFIG = ${serializedConfig};`);
+
+      const blob = new Blob([htmlContent], { type: 'text/html;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'pagina-vendas-vsl-apicultura-puro-mel-go.html';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    }
+  </script>
+</body>
+</html>
